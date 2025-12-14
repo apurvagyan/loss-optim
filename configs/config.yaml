@@ -1,0 +1,55 @@
+# =============================================================================
+# Configuration for Topological Loss Landscape Analysis
+# CPSC 6440 Final Project - Apurva Mishra and Ayush Tibrewal
+# =============================================================================
+
+paths:
+  data_dir: "data"
+  output_dir: "outputs"
+  figure_dir: "figures"
+  checkpoint_dir: "checkpoints"
+
+seed: 42
+
+data:
+  dataset: "cifar10"
+  train_subset_size: 5000
+  fixed_batch_size: 1024
+  batch_size: 128
+
+target_network:
+  architecture: "SmallCNN"
+
+loss_predictor:
+  n_samples: 100000
+  perturbation_std: 0.2
+  save_interval: 20000
+  hidden_dims: [2048, 1024, 512, 256, 128]
+  dropout: 0.1
+  epochs: 200
+  batch_size: 256
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  warmup_epochs: 10
+  patience: 30
+
+topology:
+  n_landscape_samples: 2000
+  landscape_radius: 0.3
+  sampling_method: "gaussian"
+  max_homology_dim: 1
+  max_points_for_rips: 500
+  projection_dim: 50
+  n_sublevel_thresholds: 50
+
+quality_prediction:
+  n_samples: 200
+  training_epochs: 15
+  training_lr: 0.01
+  training_momentum: 0.9
+  hidden_dims: [128, 64, 32]
+  dropout: 0.2
+  epochs: 150
+  batch_size: 32
+  learning_rate: 0.001
+  val_split: 0.2
