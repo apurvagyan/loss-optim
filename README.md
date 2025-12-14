@@ -143,19 +143,6 @@ See `figures/` for generated plots after running the pipeline.
 
 2. For faster iteration, reduce `n_samples` in config.
 
-## Citation
-
-If you use this code, please cite:
-
-```bibtex
-@misc{mishra2025topoloss,
-  title={Learning to Predict and Optimize Neural Network Training Through Topological Loss Landscape Analysis},
-  author={Mishra, Apurva and Tibrewal, Ayush},
-  year={2025},
-  note={CPSC 6440 Final Project, Yale University}
-}
-```
-
 ## References
 
 1. Carlsson, G. (2009). Topology and data. *Bulletin of the AMS*.
