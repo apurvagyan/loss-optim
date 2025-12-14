@@ -126,7 +126,7 @@ $$\text{Quality}(\mathbf{w}_0) = g_\phi(\text{TopoFeatures}(\mathbf{w}_0))$$
 
 ## Results
 
-Our method achieves significant correlation between predicted and actual initialization quality, outperforming baselines that use only:
+Our method aims to achieve significant correlation between predicted and actual initialization quality, outperforming baselines that use only:
 - Initial loss value
 - Local loss statistics (mean, std)
 - Linear models on features
