@@ -76,18 +76,19 @@ Key dependencies:
 Run the complete pipeline:
 
 ```bash
-python scripts/run_pipeline.py --config configs/config.yaml
-```
+   # full run
+   python scripts/01_generate_init_data.py --n_samples 100000
+   python scripts/02_train_loss_predictor.py --epochs 200
+   python scripts/03_generate_quality_data.py --n_samples 200
+   python scripts/04_train_quality_predictor.py --epochs 150
+   python scripts/05_generate_figures.py --format pdf
 
-### Stage-by-Stage Execution
-
-```bash
-# Stage 1 only: Generate data and train loss predictor
-python scripts/run_pipeline.py --config configs/config.yaml --stage 1
-
-# Stage 2 only: Topological analysis (requires Stage 1 checkpoint)
-python scripts/run_pipeline.py --config configs/config.yaml --stage 2
-```
+   # quick test
+   python scripts/01_generate_init_data.py --n_samples 5000
+   python scripts/02_train_loss_predictor.py --epochs 50
+   python scripts/03_generate_quality_data.py --n_samples 50
+   python scripts/04_train_quality_predictor.py --epochs 50
+   ```
 
 ### Configuration
 
@@ -141,23 +142,6 @@ See `figures/` for generated plots after running the pipeline.
    - `data/`: Generated datasets
 
 2. For faster iteration, reduce `n_samples` in config.
-
-Command structure to follow includes:
-
-```bash
-   # full run
-   python scripts/01_generate_init_data.py --n_samples 100000
-   python scripts/02_train_loss_predictor.py --epochs 200
-   python scripts/03_generate_quality_data.py --n_samples 200
-   python scripts/04_train_quality_predictor.py --epochs 150
-   python scripts/05_generate_figures.py --format pdf
-
-   # quick test
-   python scripts/01_generate_init_data.py --n_samples 5000
-   python scripts/02_train_loss_predictor.py --epochs 50
-   python scripts/03_generate_quality_data.py --n_samples 50
-   python scripts/04_train_quality_predictor.py --epochs 50
-   ```
 
 ## Citation
 
